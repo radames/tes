@@ -2,7 +2,7 @@
   import { Client } from "https://esm.run/@gradio/client";
 
   const client = await Client.connect("radames/flash-sd3-taesd3");
-
+  globalThis.client = client;
   console.log(client.api_info);
   const result = await client.predict("/infer", {
     prompt: "Hello!!",
