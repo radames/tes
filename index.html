@@ -1,0 +1,14 @@
+<script type="module">
+  import { Client } from "https://esm.run/@gradio/client";
+
+  const client = await Client.connect("radames/flash-sd3-taesd3");
+
+  console.log(client.api_info);
+  const result = await client.predict("/infer", {
+    prompt: "Hello!!",
+    seed: 0,
+    randomize_seed: true,
+  });
+
+  console.log(result.data);
+</script>
